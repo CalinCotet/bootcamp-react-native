@@ -12,7 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		589B48F25B47CD662EC59E93 /* libPods-AwesomeProjectAcamica.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 746C4BA89127C05CD480DFDE /* libPods-AwesomeProjectAcamica.a */; };
-		61A24F8D4E82B9B944D8F8D4 /* libPods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA40AFFE53E98F51E344CD /* libPods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.a */; };
+		5FB98CDB195A25BD70C9D58F /* libPods-AwesomeProjectAcamicaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FDAEDCB91503D3298CCB12C /* libPods-AwesomeProjectAcamicaTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -38,11 +38,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AwesomeProjectAcamica/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AwesomeProjectAcamica/main.m; sourceTree = "<group>"; };
 		63A31C6E3C8BA0887316D398 /* Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.release.xcconfig"; sourceTree = "<group>"; };
+		6FDAEDCB91503D3298CCB12C /* libPods-AwesomeProjectAcamicaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProjectAcamicaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		746C4BA89127C05CD480DFDE /* libPods-AwesomeProjectAcamica.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProjectAcamica.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AwesomeProjectAcamica/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B93CF6D24C92481F5F16792 /* Pods-AwesomeProjectAcamicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProjectAcamicaTests.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamicaTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE70757C991038207A911A7B /* Pods-AwesomeProjectAcamica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProjectAcamica.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProjectAcamica/Pods-AwesomeProjectAcamica.release.xcconfig"; sourceTree = "<group>"; };
+		D2C54E8C22EEC4116FBAF75C /* Pods-AwesomeProjectAcamicaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProjectAcamicaTests.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamicaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBCAA6532032D37BB10F127 /* Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EAAA40AFFE53E98F51E344CD /* libPods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCEF19B2636F52300F275E9 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
 		EBCEF19C2636F52300F275E9 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
 		EBCEF19D2636F52300F275E9 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61A24F8D4E82B9B944D8F8D4 /* libPods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.a in Frameworks */,
+				5FB98CDB195A25BD70C9D58F /* libPods-AwesomeProjectAcamicaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +120,7 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				746C4BA89127C05CD480DFDE /* libPods-AwesomeProjectAcamica.a */,
-				EAAA40AFFE53E98F51E344CD /* libPods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.a */,
+				6FDAEDCB91503D3298CCB12C /* libPods-AwesomeProjectAcamicaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,6 +132,8 @@
 				AE70757C991038207A911A7B /* Pods-AwesomeProjectAcamica.release.xcconfig */,
 				DBBCAA6532032D37BB10F127 /* Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.debug.xcconfig */,
 				63A31C6E3C8BA0887316D398 /* Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.release.xcconfig */,
+				D2C54E8C22EEC4116FBAF75C /* Pods-AwesomeProjectAcamicaTests.debug.xcconfig */,
+				9B93CF6D24C92481F5F16792 /* Pods-AwesomeProjectAcamicaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -199,8 +203,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				63B4CFEB08E5A1616393ECAF /* [CP] Embed Pods Frameworks */,
-				C542E975F09021D0D471DE10 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,23 +306,6 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		63B4CFEB08E5A1616393ECAF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A80CE0005B11BD58CFDD0614 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,23 +340,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica/Pods-AwesomeProjectAcamica-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C542E975F09021D0D471DE10 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D036061D5808604925AE13B6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,7 +355,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AwesomeProjectAcamicaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -468,7 +436,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBBCAA6532032D37BB10F127 /* Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.debug.xcconfig */;
+			baseConfigurationReference = D2C54E8C22EEC4116FBAF75C /* Pods-AwesomeProjectAcamicaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -495,7 +463,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63A31C6E3C8BA0887316D398 /* Pods-AwesomeProjectAcamica-AwesomeProjectAcamicaTests.release.xcconfig */;
+			baseConfigurationReference = 9B93CF6D24C92481F5F16792 /* Pods-AwesomeProjectAcamicaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;

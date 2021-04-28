@@ -11,7 +11,8 @@ import {
 import { colors } from '../base';
 import { getLibraries } from '../helpers/data-helpers';
 import AuthContext from '../context/context';
-import HeaderComponent from '../common/HeaderComponent';
+import HeaderComponent from '../HeaderComponent';
+import MapComponent from '../MapComponent';
 
 const LibrariesScreen = (props) => {
     
@@ -20,7 +21,6 @@ const LibrariesScreen = (props) => {
     const [librariesTotal, setLibrariesTotal] = useState(0);
 
     const {token} = useContext(AuthContext);
-
 
     const lat = null;
     const lon = null;
@@ -37,20 +37,23 @@ const LibrariesScreen = (props) => {
     return (
         <View style={styles.container}>
             <HeaderComponent navigation={navigation}/>
-            <View style={styles.list}>
-                <FlatList 
-                    data={libraries}
-                    renderItem={({item}) => 
-                        <View style={styles.library}>
-                            <Text style={styles.item}>{item.name}</Text>
-                            <Text style={styles.item}>{item.address1}, {item.city}</Text>
-                            <Text/>
-                            <Text style={styles.item}>Zip Code: {item.zipCode}</Text>
-                            <Text style={styles.item}>Country: {item.country}</Text>
-                        </View>
-                    }
-                    keyExtractor={(item, index) => index}
-                />
+            <View style={styles.content}>
+                <View style={styles.list}>
+                    <FlatList 
+                        data={libraries}
+                        renderItem={({item}) => 
+                            <View style={styles.library}>
+                                <Text style={styles.item}>{item.name}</Text>
+                                <Text style={styles.item}>{item.address1}, {item.city}</Text>
+                                <Text/>
+                                <Text style={styles.item}>Zip Code: {item.zipCode}</Text>
+                                <Text style={styles.item}>Country: {item.country}</Text>
+                            </View>
+                        }
+                        keyExtractor={(item, index) => index}
+                    />
+                </View>
+                <MapComponent/>
             </View>
         </View>
     );
@@ -64,23 +67,27 @@ const styles = StyleSheet.create({
         fontSize: 69,
         justifyContent:'center',
     },
-    list: {
+    content: {
+        alignItems:'center',    
         flex:5,
+        justifyContent:'center',
         
     },
     sectionHeader: {
         fontSize: 32,
     },
+    list: {
+        flex:2
+    },
     library: {
         backgroundColor: colors.secondary,
-        flex: 1,
         marginHorizontal: 16,
         marginVertical: 8,
 
     },
     item: {
         fontSize: 20
-    }
+    },
   });
 
 export default LibrariesScreen;

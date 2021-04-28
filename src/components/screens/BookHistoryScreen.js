@@ -11,7 +11,7 @@ import {
 import { colors } from '../base';
 import { getBooks } from '../helpers/data-helpers';
 import AuthContext from '../context/context';
-import HeaderComponent from '../common/HeaderComponent';
+import HeaderComponent from '../HeaderComponent';
 
 
 const BookHistoryScreen = (props) => {
