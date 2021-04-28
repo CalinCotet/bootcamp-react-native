@@ -1,18 +1,17 @@
 
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {
+    FlatList,
     StyleSheet,
-    View,
     Text,
-    SectionList,
-    FlatList
+    View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { colors } from '../base';
-import { getData } from '../helpers/data-helpers';
-
+import { getLibraries } from '../helpers/data-helpers';
+import AuthContext from '../context/context';
+import HeaderComponent from '../common/HeaderComponent';
 
 const LibrariesScreen = (props) => {
     
@@ -20,36 +19,24 @@ const LibrariesScreen = (props) => {
     const [libraries, setLibraries] = useState([]);
     const [librariesTotal, setLibrariesTotal] = useState(0);
 
+    const {token} = useContext(AuthContext);
+
+
     const lat = null;
     const lon = null;
-    let config = {
-        headers: {
-          Accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6IjExMTExMSJ9.oWxKNWxPxigt5YfUeAeluwg2QV9tKfgLPRnSNqiNIak'
-        }
-      };
-
-
-    const getLibraries = () => {
-        getData(`http://rn-bootcamp2021.mocklab.io/v1/libraries?latitude=${lat}&longitude=${lon}`, config).then(
-            (data) => {
-                const {libraries, total} = data;
-                setLibraries(libraries);
-                setLibrariesTotal(total);
-            });
-    }
 
     useEffect(() => {
-        getLibraries();
+        getLibraries(lat, lon, token).then((data) => {
+            const {libraries, total} = data;
+            setLibraries(libraries);
+            setLibrariesTotal(total);
+        });
     }, []); 
     
     
     return (
         <View style={styles.container}>
-            <View style={styles.header} >
-                <Icon name="rocket" size={30} color="#900" onPress={()=> navigation.toggleDrawer()} > Menu </Icon>
-                <Text>RN BOOKS</Text>
-            </View>
+            <HeaderComponent navigation={navigation}/>
             <View style={styles.list}>
                 <FlatList 
                     data={libraries}
@@ -70,20 +57,12 @@ const LibrariesScreen = (props) => {
 }
 
 const styles = StyleSheet.create({
-    header: {
-        width:'100%',
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        backgroundColor: 'powderblue',
-    },
     container: {
-        flex:1,
+        alignItems:'center',    
         backgroundColor: 'white',
+        flex:1,
         fontSize: 69,
         justifyContent:'center',
-        alignItems:'center',    
     },
     list: {
         flex:5,
@@ -93,10 +72,10 @@ const styles = StyleSheet.create({
         fontSize: 32,
     },
     library: {
+        backgroundColor: colors.secondary,
         flex: 1,
-        backgroundColor: colors.primary,
-        marginVertical: 8,
         marginHorizontal: 16,
+        marginVertical: 8,
 
     },
     item: {

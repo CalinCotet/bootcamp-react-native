@@ -1,8 +1,7 @@
 export const colors = {
-    primary: '#28F1A6',
-    secondary: '#180A32',
-    normalText: '#333333',
-    background: '#FFFFFF'
+    header: 'steelblue',
+    primary: '#FFFFFF',
+    secondary: 'cyan',
 }
 
 export const padding = {
