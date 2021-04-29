@@ -1,7 +1,10 @@
 export const colors = {
-    header: 'steelblue',
     primary: '#FFFFFF',
     secondary: 'cyan',
+    background: '#003f5c',
+    logo: '#fb5b5a',
+    input: '#465881',
+
 }
 
 export const padding = {

@@ -5,13 +5,14 @@ import {
      } from 'react-native';
 import MapboxGL from "@react-native-mapbox-gl/maps";
 
-MapboxGL.setAccessToken("pk.eyJ1IjoiY2FsaW5jb3RldCIsImEiOiJja28xY253OHYwNXo4MndzMjhmZ2VobjIzIn0.Q786EwrNU5uyAnAzjwCSWg");
+import { MAP_TOKEN } from './common/constants';
+
+MapboxGL.setAccessToken(MAP_TOKEN);
 
 const MapComponent = (props) => {
 
-    const { navigation } = props;
-
-    const SF_OFFICE_LOCATION = [-122.400021, 37.789085];
+    const LOCATION_CLUJ = [23.6236, 46.7712];
+    const LOCATION_ALBA = [23.5805, 46.0733];
 
     useEffect(() => {
         MapboxGL.setTelemetryEnabled(false);
@@ -21,18 +22,16 @@ const MapComponent = (props) => {
         <View style={styles.map}>
             <MapboxGL.MapView
                 style={styles.mapContainer} 
-                logoEnabled={false}
             >
                 <MapboxGL.Camera
                     zoomLevel={6}
                     animationMode={'flyTo'}
-                    animationDuration={6000}
-                    centerCoordinate={[23.6236, 46.7712]}
+                    animationDuration={3000}
+                    centerCoordinate={LOCATION_CLUJ}
                 />
                 <MapboxGL.UserLocation ref={(location) => {console.log({location})}} followUserLocation={true} />
-                <MapboxGL.PointAnnotation id='Cluj-Napoca' coordinate={[23.6236, 46.7712]} title='Cluj-Napoca'/>
-                <MapboxGL.PointAnnotation id='Alba Iulia' coordinate={[23.5805, 46.0733]} title='Alba Iulia'/>
-                {/* <MapboxGL.MarkerView anchor={{x: 0.5, y: 0.5}}/> */}
+                <MapboxGL.PointAnnotation id='Cluj-Napoca' coordinate={LOCATION_CLUJ} title='Cluj-Napoca'/>
+                <MapboxGL.PointAnnotation id='Alba Iulia' coordinate={LOCATION_ALBA} title='Alba Iulia'/>
             </MapboxGL.MapView>
         </View>
     )

@@ -28,8 +28,13 @@ const getRequestConfig = (userToken) => {
           Authorization: `Bearer ${userToken}`
         }
     };
-    
     return config;
+}
+
+
+export const logInUser = async (user) => {
+    const data = await postData(`${URL}/login`, user, {Accept: 'application/json'});
+    return data;
 }
 
 

@@ -4,14 +4,13 @@ import { Alert } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { postData } from './src/components/helpers/data-helpers';
-import { URL } from './src/components/common/constants';
+import { logInUser } from './src/components/helpers/data-helpers';
 import AuthContext from './src/components/context/context';
 import BadgeScreen from './src/components/screens/BadgeScreen';
 import BookHistoryScreen from './src/components/screens/BookHistoryScreen';
 import LibrariesScreen from './src/components/screens/LibrariesScreen';
 import SignInScreen from './src/components/screens/SignInScreen';
-import SplashScreen from './src/components/screens/SplashScreen';
+import Loading from './src/components/common/Loading';
 
 const Drawer = createDrawerNavigator();
 
@@ -51,12 +50,8 @@ export default function App() {
 
   const signIn = async (data) => {
     dispatch({type: 'IS_LOADING', isLoading: true})
-    postData(`${URL}/login`, data, {Accept: 'application/json'})
+    logInUser(data)
     .then(res => {
-      const payload = {
-        userId: res.userId,
-        token: res.token,
-      }
       dispatch({ type: 'SIGN_IN', token: res.token, userId: res.userId });
     })
     .catch(error => {
@@ -70,7 +65,7 @@ export default function App() {
 
   if (state.isLoading) {
     // We haven't finished checking for the token yet
-    return <SplashScreen />;
+    return <Loading/>;
   }
 
   return (

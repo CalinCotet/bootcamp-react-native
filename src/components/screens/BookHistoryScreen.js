@@ -1,6 +1,6 @@
 
 
-import React, {useEffect, useState, useContext} from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import {
     SectionList,
     StyleSheet,
@@ -8,10 +8,11 @@ import {
     View,
 } from 'react-native';
 
-import { colors } from '../base';
+import { colors, fonts, padding } from '../base';
 import { getBooks } from '../helpers/data-helpers';
 import AuthContext from '../context/context';
 import HeaderComponent from '../HeaderComponent';
+import Loading from '../common/Loading';
 
 
 const BookHistoryScreen = (props) => {
@@ -47,53 +48,57 @@ const BookHistoryScreen = (props) => {
     return (
         <View style={styles.container}>
             <HeaderComponent navigation={navigation}/>
-            <View style={styles.list}>    
-                <SectionList 
-                    sections={[
-                        {title: 'Not Returned', data: unreturnedBooks},
-                        {title: 'Returned', data: returnedBooks},
-                    ]}
-                    renderItem={({item}) => 
-                        <View style={styles.book}>
-                            <Text style={styles.item}>{item.name}</Text>
-                            <Text style={styles.item}>{item.author}</Text>
-                            <Text style={styles.item}>Borrow Date: {item.takenDate}</Text>
-                            <Text style={styles.item}>{item.returnedDate ? 
-                            `Returned date: ${item.returnedDate}` : 
-                            `Return before: ${item.returnBefore}`}</Text>
-                        </View>
-                    }
-                    renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-                    keyExtractor={(item, index) => item.isbn}
-                />
+            <View style={styles.content}>
+            { !returnedBooks.length || !unreturnedBooks.length ?
+                <Loading/> :
+                <View >    
+                    <SectionList 
+                        sections={[
+                            {title: 'Not Returned', data: unreturnedBooks},
+                            {title: 'Returned', data: returnedBooks},
+                        ]}
+                        renderItem={({item}) => 
+                            <View style={styles.book}>
+                                <Text style={styles.item}>{item.name}</Text>
+                                <Text style={styles.item}>{item.author}</Text>
+                                <Text style={styles.item}>Borrow Date: {item.takenDate}</Text>
+                                <Text style={styles.item}>{item.returnedDate ? 
+                                `Returned date: ${item.returnedDate}` : 
+                                `Return before: ${item.returnBefore}`}</Text>
+                            </View>
+                        }
+                        renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+                        keyExtractor={(item, index) => item.isbn}
+                    />
+                </View>
+            }
             </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    book: {
+        backgroundColor: colors.secondary,
+        flex: 1,
+        marginHorizontal: padding.md,
+        marginVertical: padding.sm,
+    },
     container: {
-        alignItems:'center',    
-        backgroundColor: 'white',
         flex:1,
-        fontSize: 69,
-        justifyContent:'center',
+    },
+    content: {
+        flex: 5,
+    },
+    item: {
+        fontSize: fonts.md
     },
     list: {
         flex:5,
     },
     sectionHeader: {
-        fontSize: 32,
+        fontSize: fonts.lg,
     },
-    book: {
-        backgroundColor: colors.secondary,
-        flex: 1,
-        marginHorizontal: 16,
-        marginVertical: 8,
-    },
-    item: {
-        fontSize: 20
-    }
   });
 
 export default BookHistoryScreen;

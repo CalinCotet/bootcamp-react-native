@@ -1,12 +1,11 @@
 import React from 'react';
 import { 
         StyleSheet,
-        Text,
         View,
      } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { colors } from './base';
+import { colors, padding } from './base';
 
 const HeaderComponent = (props) => {
 
@@ -15,7 +14,7 @@ const HeaderComponent = (props) => {
     return (
         <View style={styles.header} >
             <Icon name="bars" size={30} onPress={()=> navigation.toggleDrawer()}></Icon>
-            <Text>RN BOOKS</Text>
+            <Icon name="book" size={30}> BOOKS</Icon>
         </View>
     )
 }
@@ -23,11 +22,11 @@ const HeaderComponent = (props) => {
 const styles = StyleSheet.create({
     header: {
         alignItems:'center',
-        backgroundColor: colors.header,
+        backgroundColor: colors.background,
         flex: 1,
         flexDirection: 'row',
-        justifyContent:'space-around',
-        width:'100%',
+        justifyContent:'space-between',
+        paddingHorizontal: padding.md
     },
 })
 

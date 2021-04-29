@@ -1,23 +1,26 @@
 import React from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
-import { colors, padding } from '../base';
+import { colors } from '../base';
 
 const Loading = (props) => {
     return (
-        props.isLoading ? (
-            <View >
+        (
+            <View style={styles.container}>
                 <ActivityIndicator
                     size="large"
-                    color={colors.secondary}
+                    color={colors.logo}
                 />
             </View>
-        ) : false
+        )
     )
 }
 
 const styles = StyleSheet.create({
     container : {
-        padding: padding.md,
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.primary
     }
 })
 
