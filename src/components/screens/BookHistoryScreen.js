@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
         marginVertical: padding.sm,
     },
     container: {
+        backgroundColor: colors.primary,
         flex:1,
     },
     content: {

@@ -58,7 +58,7 @@ const LibrariesScreen = (props) => {
                                 keyExtractor={(item, index) => index}
                             />
                         </View>
-                        <MapComponent/>
+                        <MapComponent libraries={libraries}/>
                     </>
                 }
             </View>
@@ -68,6 +68,7 @@ const LibrariesScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: colors.primary,
         flex:1,
     },
     content: {

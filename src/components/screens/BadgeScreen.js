@@ -54,11 +54,11 @@ const BadgeScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: colors.primary,
         flex:1,
     },
     content: {
         alignItems:'center',
-        backgroundColor: colors.primary,
         flex: 5,
         justifyContent: 'center',
     },

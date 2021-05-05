@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import AuthContext from '../context/context';
-import { colors } from '../base';
+import { colors, padding, fonts, radius } from '../base';
 
 
 const SignInScreen = (props) => {
@@ -65,27 +65,27 @@ const styles = StyleSheet.create({
     },
     logo:{
         color:colors.logo,
-        fontSize:50,
+        fontSize:fonts.xl,
         fontWeight:"bold",
-        marginBottom:40,
+        marginBottom:padding.xl,
     },
     loginBtn: {
         alignItems:"center",
         backgroundColor:colors.logo,
-        borderRadius:25,
+        borderRadius:radius.md,
         height:50,
         justifyContent:"center",
-        marginBottom:10,
-        marginTop:40,
+        marginBottom:padding.sm,
+        marginTop:padding.xl,
         width:"80%",
     },
     inputView:{
         backgroundColor:colors.input,
-        borderRadius:25,
+        borderRadius:radius.md,
         height:50,
         justifyContent:"center",
-        marginBottom:20,
-        padding:20,
+        marginBottom:padding.lg,
+        padding:padding.lg,
         width:"80%",
       }
   });

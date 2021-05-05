@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { URL } from '../common/constants';
+import { MAP_TOKEN, GEO_MAP_URL, LOGIN_URL, MEMBERS_URL, LIBRARIES_URL } from '../common/constants';
 
 export const getData = async (url, config) => {
     try {
@@ -33,7 +33,7 @@ const getRequestConfig = (userToken) => {
 
 
 export const logInUser = async (user) => {
-    const data = await postData(`${URL}/login`, user, {Accept: 'application/json'});
+    const data = await postData(LOGIN_URL, user, {Accept: 'application/json'});
     return data;
 }
 
@@ -41,7 +41,7 @@ export const logInUser = async (user) => {
 export const getBooks = async(userId, userToken) => {
     const config = getRequestConfig(userToken);
     try {
-        const data = await getData(`${URL}/members/${userId}/books`, config);
+        const data = await getData(`${MEMBERS_URL}/${userId}/books`, config);
         return data;
     } catch(err) {
         console.log(err);
@@ -52,7 +52,7 @@ export const getBooks = async(userId, userToken) => {
 export const getLibraries = async(lat, lon, userToken) => {
     const config = getRequestConfig(userToken);
     try {
-        const data = await getData(`${URL}/libraries?latitude=${lat}&longitude=${lon}`, config)
+        const data = await getData(`${LIBRARIES_URL}?latitude=${lat}&longitude=${lon}`, config)
         return data;
     } catch(err) {
         console.log(err);
@@ -63,8 +63,27 @@ export const getLibraries = async(lat, lon, userToken) => {
 export const getUserData = async(userToken) => {
     const config = getRequestConfig(userToken);
     try {
-        const data = await getData(`${URL}/members/2`, config);
+        const data = await getData(`${MEMBERS_URL}/2`, config);
         return data;
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+const func = async () => {
+
+}
+
+export const getLatAndLongForData = async(addresses) => {
+    result = [];
+    try {
+        for (let i = 0; i < addresses.length; i++ ) {
+            const searchAddress = `${addresses[i].country} ${addresses[i].city} ${addresses[i].address1}`
+            const url = `${GEO_MAP_URL}${searchAddress}.json?access_token=${MAP_TOKEN}`;
+            const resultData = await getData(url, {});
+            result.push(resultData);
+        }
+        return result;
     } catch(err) {
         console.log(err);
     }
