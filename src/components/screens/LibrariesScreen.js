@@ -48,7 +48,7 @@ const LibrariesScreen = (props) => {
                                 data={libraries}
                                 renderItem={({item}) => 
                                     <View style={styles.library}>
-                                        <Text style={styles.item}>{item.name}</Text>
+                                        <Text style={styles.title}>{item.name}</Text>
                                         <Text style={styles.item}>{item.address1}, {item.city}</Text>
                                         <Text/>
                                         <Text style={styles.item}>Zip Code: {item.zipCode}</Text>
@@ -80,12 +80,21 @@ const styles = StyleSheet.create({
         flex:2,
     },
     library: {
+        flex: 1,
         backgroundColor: colors.secondary,
+        paddingHorizontal: padding.md,
+        paddingVertical: padding.sm,
+        marginVertical: padding.md,
         marginHorizontal: padding.md,
-        marginVertical: padding.sm,
+        borderRadius: padding.md,
+        alignItems: "flex-start",
+        justifyContent: 'center'
     },
     item: {
         fontSize: fonts.md
+    },
+    title: {
+        fontSize: fonts.lg,
     },
   });
 

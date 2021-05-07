@@ -78,7 +78,7 @@ export const getLatAndLongForData = async(addresses) => {
     result = [];
     try {
         for (let i = 0; i < addresses.length; i++ ) {
-            const searchAddress = `${addresses[i].country} ${addresses[i].city} ${addresses[i].address1}`
+            const searchAddress = `${addresses[i].address1},  ${addresses[i].city}, ${addresses[i].country}, ${addresses[i].zipCode} `
             const url = `${GEO_MAP_URL}${searchAddress}.json?access_token=${MAP_TOKEN}`;
             const resultData = await getData(url, {});
             result.push(resultData);

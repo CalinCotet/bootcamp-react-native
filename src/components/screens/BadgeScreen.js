@@ -8,7 +8,7 @@ import {
     View,
 } from 'react-native';
 
-import { colors, fonts } from '../base';
+import { colors, fonts, padding } from '../base';
 import { getUserData } from '../helpers/data-helpers';
 import AuthContext from '../context/context';
 import HeaderComponent from '../HeaderComponent';
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     item: {
-        fontSize: fonts.md
+        fontSize: fonts.md,
+        marginVertical: padding.sm,
     }
   });
 

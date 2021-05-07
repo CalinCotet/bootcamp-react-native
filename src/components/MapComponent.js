@@ -68,13 +68,13 @@ const MapComponent = (props) => {
 
 const styles = StyleSheet.create({
     mapContainer: {
+        height: 350,
         margin:padding.lg,
-        height: 300,
-        width: 300
+        width: 350,
     },
     map: {
+        backgroundColor: colors.primary,
         flex: 3,
-        backgroundColor: colors.primary
     }
 })
 

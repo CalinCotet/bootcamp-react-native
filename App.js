@@ -11,6 +11,7 @@ import BookHistoryScreen from './src/components/screens/BookHistoryScreen';
 import LibrariesScreen from './src/components/screens/LibrariesScreen';
 import SignInScreen from './src/components/screens/SignInScreen';
 import Loading from './src/components/common/Loading';
+import { BAD_CREDENTIALS } from './src/components/common/constants';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,12 +28,6 @@ export default function App() {
             token: action.token,
             userId: action.userId,
             isLoading: false,
-          };
-        case 'SIGN_OUT':
-          return {
-            ...prevState,
-            isSignout: true,
-            userToken: null,
           };
         case 'IS_LOADING': 
           return {
@@ -57,11 +52,9 @@ export default function App() {
     .catch(error => {
       dispatch({type: 'IS_LOADING', isLoading: false})
       console.log('error', error);
-      Alert.alert('Bad credentials');
+      Alert.alert(BAD_CREDENTIALS);
     })
   }
-
-  const signOut = () => dispatch({ type: 'SIGN_OUT' });
 
   if (state.isLoading) {
     // We haven't finished checking for the token yet
@@ -71,7 +64,6 @@ export default function App() {
   return (
     <AuthContext.Provider value={{
       signIn,
-      signOut,
       token: state.token,
       userId: state.userId,
     }}>

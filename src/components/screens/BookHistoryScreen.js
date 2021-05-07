@@ -33,7 +33,7 @@ const BookHistoryScreen = (props) => {
                 if (book.returnedDate === null) {
                     unreturned.push(book);
                 } else {
-                    returned.push(book)
+                    returned.push(book);
                 }
             });
     
@@ -59,7 +59,7 @@ const BookHistoryScreen = (props) => {
                         ]}
                         renderItem={({item}) => 
                             <View style={styles.book}>
-                                <Text style={styles.item}>{item.name}</Text>
+                                <Text style={styles.title}>{item.name}</Text>
                                 <Text style={styles.item}>{item.author}</Text>
                                 <Text style={styles.item}>Borrow Date: {item.takenDate}</Text>
                                 <Text style={styles.item}>{item.returnedDate ? 
@@ -80,9 +80,12 @@ const BookHistoryScreen = (props) => {
 const styles = StyleSheet.create({
     book: {
         backgroundColor: colors.secondary,
+        borderRadius: padding.md,
         flex: 1,
         marginHorizontal: padding.md,
-        marginVertical: padding.sm,
+        marginVertical: padding.md,
+        paddingHorizontal: padding.md,
+        paddingVertical: padding.md,
     },
     container: {
         backgroundColor: colors.primary,
@@ -97,9 +100,14 @@ const styles = StyleSheet.create({
     list: {
         flex:5,
     },
-    sectionHeader: {
+    title: {
         fontSize: fonts.lg,
     },
+    sectionHeader: {
+        marginHorizontal: padding.md,
+        fontSize: fonts.lg,
+        backgroundColor: colors.primary
+    }
   });
 
 export default BookHistoryScreen;
