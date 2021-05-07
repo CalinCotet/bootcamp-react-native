@@ -12,6 +12,7 @@ import {
 
 import AuthContext from '../context/context';
 import { colors, padding, fonts, radius } from '../base';
+import { FIELDS_EMPTY } from '../common/constants';
 
 
 const SignInScreen = (props) => {
@@ -25,7 +26,7 @@ const SignInScreen = (props) => {
         if ( memberId.length > 0 && password.length > 0 ) {
             signIn({ memberId, password });
         } else {
-            Alert.alert('bad credentials')
+            Alert.alert(FIELDS_EMPTY);
         }
     }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { MAP_TOKEN, GEO_MAP_URL, LOGIN_URL, MEMBERS_URL, LIBRARIES_URL } from '../common/constants';
+import { MAP_TOKEN, GEO_MAP_URL, LOGIN_URL, MEMBERS_URL, LIBRARIES_URL, BAD_CREDENTIALS } from '../common/constants';
 
 export const getData = async (url, config) => {
     try {
@@ -17,7 +17,7 @@ export const postData = async (url, params, config) => {
         const data = response.data;
         return data;
     } catch(error) {
-        throw 'Bad credentials';
+        throw BAD_CREDENTIALS;
     }
 }
 

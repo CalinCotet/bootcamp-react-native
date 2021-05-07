@@ -6,3 +6,4 @@ export const MEMBERS_URL = 'http://rn-bootcamp2021.mocklab.io/v1/members';
 export const URL = 'http://rn-bootcamp2021.mocklab.io/v1';
 
 export const BAD_CREDENTIALS = 'Username or password are not valid';
+export const FIELDS_EMPTY = 'Fields cannot be empty';

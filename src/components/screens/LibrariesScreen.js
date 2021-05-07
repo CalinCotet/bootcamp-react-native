@@ -80,15 +80,14 @@ const styles = StyleSheet.create({
         flex:2,
     },
     library: {
-        flex: 1,
         backgroundColor: colors.secondary,
+        borderRadius: padding.md,
+        flex: 1,
+        justifyContent: 'center',
+        marginHorizontal: padding.md,
+        marginVertical: padding.md,
         paddingHorizontal: padding.md,
         paddingVertical: padding.sm,
-        marginVertical: padding.md,
-        marginHorizontal: padding.md,
-        borderRadius: padding.md,
-        alignItems: "flex-start",
-        justifyContent: 'center'
     },
     item: {
         fontSize: fonts.md
